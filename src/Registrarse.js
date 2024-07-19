@@ -23,6 +23,7 @@ function guardarDatos() {
   // Aca estoy dandole un evento al boton
 btnRegistrarse.addEventListener("click",
     validarVacios
+  
 )
 
 
