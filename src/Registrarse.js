@@ -4,6 +4,7 @@ let email = document.getElementById("email")
 let password = document.getElementById("password")
 let infUsuarios= JSON.parse(localStorage.getItem("user")) || []
 
+// Aca estoy guardando los datos en el localStorage
 function guardarDatos() {
     console.log("entra");  
     let nombre = document.getElementById("nombre").value // con el .value les estoy dando un valor
@@ -16,7 +17,6 @@ function guardarDatos() {
         password:password
     } 
     infUsuarios.push(usuario)
-    // Aca estoy guardando los datos en el localStorage
     localStorage.setItem("user",JSON.stringify(infUsuarios))
 }
 

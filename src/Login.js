@@ -24,11 +24,11 @@ function validarVacios() {
     let emailL = document.getElementById("emailL").value 
     let password = document.getElementById("password").value
     // estas dos vaariables las agregue porque no me dejaba validar solo con el .trim    
-    let emailValor = emailL     // El nombre de esta variable es igual a email
+    let emailValor = emailL    
     let passwordValor = password
 
     if (emailValor.trim()===""||emailValor===null|| passwordValor.trim()===""||passwordValor===null) {
-        alert('llenar espacios vacios') // cambiar alerta
+        alert('llenar espacios vacios') // cambiar alerta swwetalert
         console.log("if datos");
     }else{
         traerDatos()
