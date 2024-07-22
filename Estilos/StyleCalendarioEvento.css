@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif; /* Define la fuente para el texto del cuerpo */
+    display: flex; /* Utiliza un diseño de flexbox */
+    flex-direction: column; /* Los elementos hijos se colocan en una columna */
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+
+    
+}
