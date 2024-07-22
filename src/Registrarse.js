@@ -36,7 +36,12 @@ function validarVacios() {
     }
 }
 // Aca estoy dandole un evento al boton
-btnRegistrarse.addEventListener("click", ()=>{validarVacios()})
+btnRegistrarse.addEventListener("click", ()=>{
+    validarVacios()
+    window.location.href = "Login.html"
+}
+
+)
 
 
 
