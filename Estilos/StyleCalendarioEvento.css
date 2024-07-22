@@ -1,10 +1,55 @@
 body {
     font-family: Arial, sans-serif; /* Define la fuente para el texto del cuerpo */
-    display: flex; /* Utiliza un diseño de flexbox */
+    display: flex; /* Utilize un diseño de flexbox */
     flex-direction: column; /* Los elementos hijos se colocan en una columna */
-    align-items: center; /* Centra los elementos hijos horizontalmente */
-    margin: 0; /* Elimina el margen predeterminado */
-    padding: 0; /* Elimina el padding predeterminado */
+    align-items: center; /* Centre los elementos hijos horizontalmente */
+    margin: 0; /* Elimine el margen predeterminado */
+    padding: 0; /* Elimine el padding predeterminado */
 
     
 }
+
+#calendario {
+    display: flex; /* Utilize un diseño de flexbox */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    width: 60%; /* Define el ancho del calendario */
+    justify-content: center; /* Centre los elementos hijos horizontalmente */
+    margin: 20px 0; /* Agregue un margen superior e inferior */
+    
+}
+
+.day {
+    border: 1px solid #ccc;  /* Agregue un borde gris claro alrededor de cada día */
+    width: 100px;   /* Se Definio el ancho de cada día */
+    height: 100px;   /* Se Definio la altura de cada día */
+    display: flex;   /* Utilize un diseño de flexbox */
+    flex-direction: column;    /* Los elementos hijos se colocan en una columna */
+    align-items: center;    /* Centre los elementos hijos horizontalmente */
+    justify-content: center;     /* Centre los elementos hijos verticalmente */
+    margin: 5px;      /* Agregue margen alrededor de cada día */
+    position: relative;    /* Agregue una posición relativa para los días */
+}
+
+.event {
+    position: absolute;   /* Estableci una posición absoluta para los eventos */
+    bottom: 5px;   /* Sitúe el evento 5px desde la parte inferior */
+    left: 5px;   /* Sitúe el evento 5px desde la parte izquierda */
+    right: 5px;   /* Sitúe el evento 5px desde la parte derecha */
+    background-color: rgb(171, 235, 251);   /* Establece el color de fondo del evento */
+    padding: 2px;   /* Agregue padding alrededor del contenido del evento */
+    text-align: center;   /* Centre el texto del evento */
+    font-size: 10px;     /* Le Agregue un tamaño */
+    word-wrap: break-word;   /* Me permite que las palabras largas se dividan automáticamente en varias líneas*/
+}
+
+#event-form {
+    margin-top: 20px;   /* Agregue un margen superior */
+    width: 60%;    /* Define el ancho del formulario de evento */
+}
+
+#event-form label, #event-form input, #event-form button {
+    display: block;   /* Hice que los elementos sean bloques */
+    width: 100%;   /* Define el ancho completo para los elementos del formulario */
+    margin: 5px 0;   /* Agregue un margen superior e inferior a los elementos del formulario */
+}
+
