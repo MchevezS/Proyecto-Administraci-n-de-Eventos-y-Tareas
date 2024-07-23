@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const calendar = document.getElementById('calendario'); // Obtiene el contenedor del calendario
+    const calendario = document.getElementById('calendario'); // Obtiene el contenedor del calendario
     const eventDateInput = document.getElementById('event-date'); // Obtiene el campo de entrada para la fecha del evento
     const eventNameInput = document.getElementById('event-name'); // Obtiene el campo de entrada para el nombre del evento
     const addEventButton = document.getElementById('add-event'); // Obtiene el botón para agregar o modificar eventos
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dayElement.className ='day'; // Asigne la clase 'day' al elemento
         dayElement.id =` day- ${day}`; // Asigne un ID único basado en el número del día
         dayElement.textContent = day; // Establece el texto del div como el número del día
-        calendar.appendChild(dayElement); // Agrega el div del día al contenedor del calendario
+        calendario.appendChild(dayElement); // Agrega el div del día al contenedor del calendario
         
     }
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             eventElement.textContent = eventName; // Establece el texto del div del evento con el nombre del evento
 
-            // Agregar funcionalidad para eliminar el evento
+            // Agregue funcionalidad para eliminar el evento
             eventElement.addEventListener('click', function () {
                 dayElement.removeChild(eventElement); // Elimina el div del evento cuando se hace clic en él
             });
