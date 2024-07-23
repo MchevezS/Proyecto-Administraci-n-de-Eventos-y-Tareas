@@ -1,22 +1,22 @@
-let emailL = document.getElementById("emailL")
-let password = document.getElementById("password")
 let btnInicio = document.getElementById("btnInicio")
 
+let emailL = document.getElementById("emailL")
+let password = document.getElementById("password")
+let datosLocal = JSON.parse(localStorage.getItem("user")) || []
 
 // voy a comenzar a traer los datos del LocalStorage
 function traerDatos() {
+    let lemail=emailL.value 
     let contrasena=password.value
-    let lemail=emailL.value
-    let emailLocal=localStorage.getItem("email",emailL)
-    let passwordLocal=localStorage.getItem("password",password)
-    console.log(emailLocal+" local storage email");
-    console.log(passwordLocal+" local storage email");
-
-    if (lemail===emailLocal&&contrasena===passwordLocal) {
-        alert('Entramos exitosamente')
-    }else{
-        alert('incorrecto')
-    }
+   for (let index = 0; index < datosLocal.length; index++) {
+       if (lemail===datosLocal[index].email && contrasena===datosLocal[index].password) {
+           alert('Entramos exitosamente')
+           return;
+       }else{
+        alert('Credenciales invalidas')
+        return;
+       }
+   }
 }
 
 // Valide espacios vacios
@@ -32,7 +32,7 @@ function validarVacios() {
         console.log("if datos");
     }else{
         traerDatos()
-        console.log('traerDatos()');
+        
     }  
 }
 
