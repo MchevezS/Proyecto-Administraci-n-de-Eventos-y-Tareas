@@ -3,20 +3,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const eventDateInput = document.getElementById('event-date'); // Obtiene el campo de entrada para la fecha del evento
     const eventNameInput = document.getElementById('event-name'); // Obtiene el campo de entrada para el nombre del evento
     const addEventButton = document.getElementById('add-event'); // Obtiene el botón para agregar o modificar eventos
+    
+    const infoEvent = JSON.parse(localStorage.getItem("eventos")) || []
+    function datosEvento() {
+     const eventDateInput = document.getElementById('event-date')   /// por terminar guardar los eventos en el local
+     const eventNameInput = ocument.getElementById('event-name')     
+    }
 
     // Crea una estructura de calendario con días del 1 al 31
     for (let day = 1; day <= 31; day++) {
         const dayElement = document.createElement('div'); // Crea un nuevo elemento div para cada día
         dayElement.className ='day'; // Asigne la clase 'day' al elemento
         dayElement.id =` day- ${day}`; // Asigne un ID único basado en el número del día
-        dayElement.textContent = day; // Establece el texto del div como el número del día
-        calendario.appendChild(dayElement); // Agrega el div del día al contenedor del calendario
+        dayElement.textContent = day; // Estableci el texto del div como el número del día
+        calendario.appendChild(dayElement); // Agregue el div del día al contenedor del calendario
         
     }
 
     // Función para agregar o modificar eventos // *button
     addEventButton.addEventListener('click', function () {
-        const date = new Date(eventDateInput.value); // Convierte la fecha ingresada a un objeto Date
+        const date = new Date(eventDateInput.value); // Convierti la fecha ingresada a un objeto Date
         const eventName = eventNameInput.value; // Obtiene el nombre del evento ingresado
         const day = date.getDate(); // Obtiene el día del mes de la fecha ingresada
         
@@ -43,5 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             alert('Por favor, ingrese una fecha y un nombre de evento válidos.'); // Muestra una alerta si faltan datos
         }
+
+       
     });
 });

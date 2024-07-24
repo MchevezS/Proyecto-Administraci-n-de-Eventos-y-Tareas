@@ -1,16 +1,16 @@
-let btnRegistrarse = document.getElementById("btnRegistrarse")
-let nombre = document.getElementById("nombre")
-let email = document.getElementById("email")
-let password = document.getElementById("password")
+let btnRegistrarse = document.getElementById('btnRegistrarse')
+let nombre = document.getElementById('nombre')
+let email = document.getElementById('email')
+let password = document.getElementById('password')
 
-let infUsuarios= JSON.parse(localStorage.getItem("user")) || []
+let infUsuarios= JSON.parse(localStorage.getItem('user')) || []
 
 // Aca estoy guardando los datos en el localStorage
 function guardarDatos() {
     console.log("entra");  
-    let nombre = document.getElementById("nombre").value // con el .value les estoy dando un valor
-    let email = document.getElementById("email").value
-    let password = document.getElementById("password").value
+    let nombre = document.getElementById('nombre').value // con el .value les asigne un valor
+    let email = document.getElementById('email').value
+    let password = document.getElementById('password').value
     
     let usuario = {
         nombre:nombre,

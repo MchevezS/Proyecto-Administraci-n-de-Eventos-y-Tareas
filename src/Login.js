@@ -37,8 +37,11 @@ function validarVacios() {
 }
 
 // evento click al btnInicio
-btnInicio.addEventListener("click", validarVacios
-    
+btnInicio.addEventListener("click",()=>{
+    validarVacios()
+    window.location.href = "Tarea-Evento.html"
+
+}
 )
 
 
