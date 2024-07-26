@@ -5,9 +5,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const addEventButton = document.getElementById('add-event'); // Obtiene el botón para agregar o modificar eventos
     
     const infoEvent = JSON.parse(localStorage.getItem("eventos")) || []
-    function datosEvento() {
-     const eventDateInput = document.getElementById('event-date')   /// por terminar guardar los eventos en el local
-     const eventNameInput = ocument.getElementById('event-name')     
+     console.log(infoEvent+"holaaaa");
+    function guardarDatosEventos() {                                        
+        console.log("dentro de datos eventos");
+     const eventDateInput = document.getElementById('event-date').value   
+     const eventNameInput = document.getElementById('event-name').value   
+      
+     let eventos ={
+        fechaE: eventDateInput,
+        nombreE: eventNameInput
+      }
+       infoEvent.push(eventos)
+       localStorage.setItem("eventos",JSON.stringify(infoEvent))
     }
 
     // Crea una estructura de calendario con días del 1 al 31
@@ -44,12 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // Limpia los campos del formulario
+            guardarDatosEventos()       // Llame a la funcion donde estoy guardando los eventos 
             eventDateInput.value = ''; // Limpia el campo de entrada de fecha
             eventNameInput.value = ''; // Limpia el campo de entrada de nombre de evento
         } else {
-            alert('Por favor, ingrese una fecha y un nombre de evento válidos.'); // Muestra una alerta si faltan datos
+            alert('Por favor, ingrese una fecha y un nombre de evento válidos.'); // Muestra una alerta si faltan datos // voy a cambiar las alertas por una sweeAlerta
         }
 
-       
+    
     });
 });
