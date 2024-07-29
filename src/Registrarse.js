@@ -14,12 +14,14 @@ function guardarDatos() {
     
     let usuario = {            
         nombre:nombre,
-        email:email,            // El nombre que tiene ala izquierda es como me aperece en el localStorage
-        password:password         // El de la derecha es el que guarda la informacion que ingresa el Usuario.
+        email:email,            // El nombre que tiene ala izquierda es como me aperece en el localStorage.
+        password:password      // El de la derecha es el que guarda la informacion que ingresa el Usuario.
     } 
     infUsuarios.push(usuario)   
     localStorage.setItem("user",JSON.stringify(infUsuarios))
 }
+// Aca valido el si el usuario ya existe.
+
 
 function validarVacios() {
       // Estoy validando espacios vacios
