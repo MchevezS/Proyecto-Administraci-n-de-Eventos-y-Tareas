@@ -11,6 +11,24 @@ function guardarDatos() {
     let nombre = document.getElementById('nombre').value // con el .value les asigne un valor
     let email = document.getElementById('email').value
     let password = document.getElementById('password').value
+
+    // Aca Verificoo si el usuario ya está registrado
+     let usuarioExistente = infUsuarios.find(usuario => usuario.email === email);
+        
+     if (usuarioExistente) {
+         alert("Este correo electrónico ya está registrado.");
+     } else {
+         let usuario = {            
+             nombre: nombre,
+             email: email,            // El nombre que tiene a la izquierda es como me aparece en el localStorage.
+             password: password
+         };
+         
+         // Guardar el nuevo usuario
+         infUsuarios.push(usuario);
+         localStorage.setItem('user', JSON.stringify(infUsuarios));
+         alert("Usuario registrado con éxito.");
+     }
     
     let usuario = {            
         nombre:nombre,
@@ -20,8 +38,6 @@ function guardarDatos() {
     infUsuarios.push(usuario)   
     localStorage.setItem("user",JSON.stringify(infUsuarios))
 }
-// Aca valido el si el usuario ya existe.
-
 
 function validarVacios() {
       // Estoy validando espacios vacios
@@ -40,6 +56,7 @@ function validarVacios() {
 }
 // Aca estoy dandole un evento al boton
 btnRegistrarse.addEventListener("click", ()=>{
+    guardarDatos()
     validarVacios() // Este validar lo que hace es esperar que se le de click al boton para ejecutarse
     window.location.href = "Login.html"  // Me redirecciona otra sitio 
 }
