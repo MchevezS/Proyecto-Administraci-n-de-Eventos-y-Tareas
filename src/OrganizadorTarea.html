@@ -6,13 +6,14 @@
     <title>Organizador de Tareas</title>
 </head>
 <body>
-   <h1>Organizador de tareas</h1>   <!--Titulo  -->
-    <input id="inputTarea" type="text" placeholder="Ingrese su taea">  <!-- Las tareas se insertan acá -->
-    <button id="btnAgregar">Agregar</button>   <!-- Cuando haga click se agregan las tareas / boton-->
-    <button id="btnEliminar">🗑️</button>    <!-- Boton eliminar Tareas-->
-    <button id="btnEditar">✍🏻</button>    <!--Boton eliminar tarea-->
-<div id="contenedorTareas" class="contenedorTareas"> <!--aparición de tareas en este input / todas tareas las agrego aca-->
-</div>       
+   <div id="contenedor">
+      <h1>Lista de Tareas</h1>    <!--Titulo  -->
+      <form id="formularioTarea">   <!--contenedor-->
+          <input type="text" id="descripcion" placeholder="Descripción de la tarea">  <!--Las tareas seran ingresadas aca-->
+          <button type="submit">Agregar</button>    <!-- Cuando haga click se agregan las tareas / boton--> 
+      </form>
+      <ul id="listaTareas"></ul>  <!--Las tareas se agregan a este contenedor-->
+  </div>      
 
     
 </body>

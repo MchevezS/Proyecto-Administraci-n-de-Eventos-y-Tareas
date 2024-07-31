@@ -13,34 +13,26 @@ function guardarDatos() {
     let password = document.getElementById('password').value
 
     // Aca Verificoo si el usuario ya está registrado
-     let usuarioExistente = infUsuarios.find(usuario => usuario.email === email);
-        
-     if (usuarioExistente) {
-         alert("Este correo electrónico ya está registrado.");
-     } else {
+    for (let index = 0; index < infUsuarios.length; index++) {
+        if(infUsuarios[index].email===email){
+            alert("EXISTE")
+            return
+        }
+    }
          let usuario = {            
              nombre: nombre,
              email: email,            // El nombre que tiene a la izquierda es como me aparece en el localStorage.
              password: password
          };
-         
          // Guardar el nuevo usuario
          infUsuarios.push(usuario);
          localStorage.setItem('user', JSON.stringify(infUsuarios));
          alert("Usuario registrado con éxito.");
+         return
      }
-    
-    let usuario = {            
-        nombre:nombre,
-        email:email,            // El nombre que tiene ala izquierda es como me aperece en el localStorage.
-        password:password      // El de la derecha es el que guarda la informacion que ingresa el Usuario.
-    } 
-    infUsuarios.push(usuario)   
-    localStorage.setItem("user",JSON.stringify(infUsuarios))
-}
 
 function validarVacios() {
-      // Estoy validando espacios vacios
+      // Estoy validando si hay espacios vacios
     
     let nombreValor = nombre.value     // les cree estas variables porque no me estaba funcionando con el .trim 
     let passwordValor = password.value
