@@ -42,5 +42,17 @@ function agregarTarea(descripcion, fechaHora = new Date().toLocaleString(), guar
   }
 }
 
+// Funcion para actualizar el localStorage con las tareas actuales
+function actualizarLocalStorage() {
+  let tareas = []; // Cree un array para almacenar las tareas
+  document.querySelectorAll('#listaTareas li').forEach(tareaElemento => {
+      let descripcion = tareaElemento.querySelector('span').textContent; // Obtiene la descripción de la tarea
+      let fechaHora = tareaElemento.querySelector('span:nth-child(2)').textContent.replace(' (Creado: ', '').replace(')', ''); // Obtiene la fecha y hora de la tarea
+      tareas.push({ descripcion, fechaHora }); // Añade la tarea al array
+  });
+  localStorage.setItem('tareas', JSON.stringify(tareas)); // Guarda las tareas en el localStorage
+}
+
+
 
 
