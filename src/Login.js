@@ -11,6 +11,7 @@ function traerDatos() {
    for (let index = 0; index < datosLocal.length; index++) {
        if (lemail===datosLocal[index].email && contrasena===datosLocal[index].password) {
            alert('Entramos exitosamente')
+            window.location.href = "CalendarioEventos.html"
            return;
        }else{
         alert('Credenciales invalidas')
@@ -23,13 +24,14 @@ function traerDatos() {
 function validarVacios() {    
     let emailL = document.getElementById("emailL").value 
     let password = document.getElementById("password").value
-    // estas dos vaariables las agregue porque no me dejaba validar solo con el .trim    
+    // estas dos variables las agregue porque no me dejaba validar solo con el .trim    
     let emailValor = emailL    
     let passwordValor = password
 
     if (emailValor.trim()===""||emailValor===null|| passwordValor.trim()===""||passwordValor===null) {
-        alert('llenar espacios vacios') // cambiar alerta swwetalert
+        alert('Llenar espacios vacios') // cambiar alerta swwetalert
         console.log("if datos");
+        
     }else{
         traerDatos()
         
@@ -39,7 +41,7 @@ function validarVacios() {
 // evento click al btnInicio
 btnInicio.addEventListener("click",()=>{
     validarVacios()
-    window.location.href = "Tarea-Evento.html"
+   
 
 }
 )

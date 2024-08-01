@@ -25,14 +25,17 @@ function agregarTarea(descripcion, fechaHora = new Date().toLocaleString(), guar
     let spanFechaHora = document.createElement('span'); // Cree un span para la fecha y hora de la tarea
     spanFechaHora.textContent = ` (Creado: ${fechaHora})`; // Establecer el texto del span a la fecha y hora de creacion
     
-    // Cree un boton para editar la tarea
+    // Cree un boton para editar la tarea, fecha y hora
     let botonEditar = document.createElement('button');
     botonEditar.textContent = 'Editar';
     botonEditar.addEventListener('click', function() {
         let nuevaDescripcion = prompt('Edita la descripción de la tarea:', descripcion);
+        let nuevaFecha = prompt('Edita la Fecha y hora de la tarea:', fechaHora);
         if (nuevaDescripcion) {
             spanDescripcion.textContent = nuevaDescripcion; // Actualiza la descripcion en el DOM
             descripcion = nuevaDescripcion; // Actualiza la descripcion en la variable
+            fechaHora = nuevaFecha
+            spanFechaHora.textContent=nuevaFecha
             actualizarLocalStorage(); // Actualiza el localStorage
         }
     });
