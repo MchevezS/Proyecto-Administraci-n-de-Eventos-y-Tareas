@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
        localStorage.setItem("eventos",JSON.stringify(infoEvent))
     }
 
+
     // Crea una estructura de calendario con días del 1 al 31
     for (let day = 1; day <= 31; day++) {
         const dayElement = document.createElement('div'); // Crea un nuevo elemento div para cada día
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         calendario.appendChild(dayElement); // Agregue el div del día al contenedor del calendario
         
     }
+
 
     // Función para agregar o modificar eventos // *boton
     addEventButton.addEventListener('click', function () {
@@ -48,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             eventElement.textContent = eventName; // Establece el texto del div del evento con el nombre del evento
 
+
             // Agregue funcionalidad para eliminar el evento
             eventElement.addEventListener('click', function () {
                 dayElement.removeChild(eventElement); // Elimina el div del evento cuando se hace clic en él
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     });
 });
+
 
 let btnTask = document.getElementById("btnTask")  //Obtiene el boton para agregar las tareas (Me redirecciona a mi agregado de tareas) 
 

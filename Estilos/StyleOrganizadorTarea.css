@@ -1,3 +1,7 @@
+body{
+    background-color: cadetblue;
+}
+
 /* Estilo del contenedor principal */
 #contenedor {
     width: 100%;
