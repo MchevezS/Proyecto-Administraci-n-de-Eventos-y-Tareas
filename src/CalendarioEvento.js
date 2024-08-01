@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const eventDateInput = document.getElementById('event-date'); // Obtiene el campo de entrada para la fecha del evento
     const eventNameInput = document.getElementById('event-name'); // Obtiene el campo de entrada para el nombre del evento
     const addEventButton = document.getElementById('add-event'); // Obtiene el botón para agregar o modificar eventos
-    
+    const btnTaskv = document.getElementById("btnTask")  //Obtiene el boton para agregar las tareas (Me redirecciona a mi agregado de tareas) 
+
     const infoEvent = JSON.parse(localStorage.getItem("eventos")) || []
      console.log(infoEvent+"holaaaa");
     function guardarDatosEventos() {                                        
@@ -63,3 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     });
 });
+
+btnTaskv.addEventListener("clck", ()=>{
+    window.location.href = "OrganizadorTarea.html"
+})

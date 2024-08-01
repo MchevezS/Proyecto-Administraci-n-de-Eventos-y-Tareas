@@ -18,6 +18,12 @@ body {
     
 }
 
+#btnTask{
+   background-color: rgb(18, 228, 228);
+   height: 25px;  
+   width: 250px;
+}
+
 .day {
     border: 1px solid #ccc;  /* Agregue un borde gris claro alrededor de cada día */
     width: 100px;   /* Se Definio el ancho de cada día */
