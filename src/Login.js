@@ -5,19 +5,24 @@ let password = document.getElementById("password")
 let datosLocal = JSON.parse(localStorage.getItem("user")) || []
 
 // voy a comenzar a traer los datos del LocalStorage
+let existe=false
 function traerDatos() {
     let lemail=emailL.value 
     let contrasena=password.value
+    if(lemail && contrasena){
    for (let index = 0; index < datosLocal.length; index++) {
        if (lemail===datosLocal[index].email && contrasena===datosLocal[index].password) {
-           alert('Entramos exitosamente')
-            window.location.href = "CalendarioEventos.html"
-           return;
-       }else{
-        alert('Credenciales invalidas')
-        return;
+            existe=true
+            break;
        }
    }
+   if(existe){
+    alert('Entramos exitosamente')
+            window.location.href = "CalendarioEventos.html"
+   }else{
+    alert("invalido")
+   }
+}
 }
 
 // Valide espacios vacios
