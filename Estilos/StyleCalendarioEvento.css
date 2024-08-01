@@ -5,7 +5,7 @@ body {
     align-items: center; /* Centre los elementos hijos horizontalmente */
     margin: 0; /* Elimine el margen predeterminado */
     padding: 0; /* Elimine el padding predeterminado */
-
+    background-color: rgb(255, 223, 143);
     
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 #btnTask{
-   background-color: rgb(18, 228, 228);
+   background-color: rgb(124, 174, 174);
    height: 25px;  
    width: 250px;
 }
@@ -41,7 +41,7 @@ body {
     bottom: 5px;   /* Sitúe el evento 5px desde la parte inferior */
     left: 5px;   /* Sitúe el evento 5px desde la parte izquierda */
     right: 5px;   /* Sitúe el evento 5px desde la parte derecha */
-    background-color: rgb(171, 235, 251);   /* Establece el color de fondo del evento */
+    background-color: rgb(249, 245, 245);   /* Establece el color de fondo del evento */
     padding: 2px;   /* Agregue padding alrededor del contenido del evento */
     text-align: center;   /* Centre el texto del evento */
     font-size: 10px;     /* Le Agregue un tamaño */
@@ -58,7 +58,9 @@ body {
     width: 100%;   /* Define el ancho completo para los elementos del formulario */
     margin: 5px 0;   /* Agregue un margen superior e inferior a los elementos del formulario */
 }
-
+ @media (min-width: 768px) and (max-width: 1023px) {
+    /* estilo para pantallas medianas */
+  } 
 
 
 
